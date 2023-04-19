@@ -47,7 +47,14 @@ mongoose.connect(uri, {
     useUnifiedTopology: true
 })
 .then(() => {
-  console.log('Connected to DB');
+  console.log('DB connected');
+//defines db as our database
   db = mongoose.connection;
 })
 .catch(err => console.log(err));
+
+//Start Server--------------------------------------------------------------------------------
+const serverPort = 8080;
+
+//tells the application to listen on port 8080 and logs it
+app.listen(serverPort, () => console.log(`Using port ${serverPort}`));
