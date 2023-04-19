@@ -97,5 +97,50 @@ app.get('/SignUp', function(req,res){
           res.render('pages/SignIn');
       }
   })
-  
+
+////Post Requests/////-------------------------------------------------------------------------------------------------------------
+
+//when the login form is submitted this function is called 
+app.post('/dologin', function (req, res) {
+    console.log(JSON.stringify(req.body))
+    //reads the username from the body into a constant
+    const uname = req.body.username;
+    //reads the password from the password field
+    var pword = req.body.password;
+
+    //searches for the user in the database
+    db.collection('users').findOne({
+        "username": uname
+    }, function (err, result) {
+        if (err) throw err;
+
+        //redirects the user to the sign in page again if a user isnt found
+        if (!result) {
+            res.redirect('/SignIn');
+            console.log("user not found :(")
+            return
+          }
+
+        //checks if the users password matches the one stored in the database
+        if (result.password == pword) {
+
+            //logs the user in
+            req.session.loggedin = true;
+
+            //sets the current user to uname
+            req.session.currentuser = uname;
+            
+            //redirects the user to their account
+            res.redirect('/UserAccount');
+            //message in the console to let us know someone logged in
+            console.log("a user was recognised, horay!")
+        
+        //redirects the user to sign in again if the user isnt found
+        }else{
+            res.redirect('/SignIn')
+            console.log("user not found :(")
+        }
+    });
+});
+
   
