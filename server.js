@@ -58,3 +58,44 @@ const serverPort = 8080;
 
 //tells the application to listen on port 8080 and logs it
 app.listen(serverPort, () => console.log(`Using port ${serverPort}`));
+
+///Get Routes///----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//sets up routes for navigation
+app.get('/', function(req, res){
+    
+    //renders the SignIn page, this means that the user will always be brought here when the site is loaded
+      res.render('pages/SignIn');
+  
+  })
+  
+//decides what to serve when /Signup is retrieved
+app.get('/SignUp', function(req,res){
+
+    //Renders the Signup page
+      res.render('pages/SignUp');
+  })
+  
+  //gets the sign in function, calls req and res
+  app.get('/SignIn', function(req, res){
+  
+    //checks if the user has logged in
+      if (req.session.loggedin) {
+  
+        //sets logs the user out of the session
+          req.session.loggedin = false;
+  
+        //clears the current user
+          req.session.currentuser = '';
+        
+        //renders the SignIn page
+          res.render('pages/SignIn');
+        }
+      
+      //if the user isnt logged in just render the sign in screen
+      else{
+          res.render('pages/SignIn');
+      }
+  })
+  
+  
