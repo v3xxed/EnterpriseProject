@@ -1,0 +1,35 @@
+<!-- creates input boxes, dropdown, a button to calculate the price and a button to save the contract -->
+<form action='/insertquote' method="post">
+    <div class="grid-item item1">
+      <br><br><br>
+      <label class="formLabel" for="ContractName">Contract Name</label><br>
+      <input class="nameBox" type="text" placeholder="Contract Name" title="Contract Name" id="ContractName" name="name" required><br><br>
+  
+      <label class="formLabel" for="person">Choose a Person</label><br>
+      <select id="person" name="job" required>
+        <option value="junior">junior</option>
+        <option value="standard">standard</option>
+        <option value="senior">senior</option>
+      </select><br><br>
+  
+      <label class="formLabel" for="contractWeeks">Contract Duration in Weeks</label><br>
+      <input class="nameBox" type="number" placeholder="0" title="contract weeks" id="contractWeeks" name="weeks" required><br><br>
+  
+      <button type="button" onclick="FudgePrice()">Calculate Contract</button><br><br>
+  
+      <div id="contractResult" style="display: none;">
+        <label class="formLabel" for="contractPrice">Price of Contract</label><br>
+        <input class="nameBox" type="number" title="contract price" id="contractPrice" name="price" readonly><br><br>
+  
+        <button type="submit">Save Contract</button>
+      </div>
+    </div>
+  </form>
+  
+  <!-- calculate the price with the fudge factor included and return to show price -->
+  <script>
+  function FudgePrice() {
+
+  }
+  </script>
+  
