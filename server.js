@@ -37,3 +37,17 @@ app.use(function(req, res, next){
   res.locals.username = req.session.currentuser
   next();
   })
+
+//Setup MongoDB--------------------------------------------------------------------------------
+const mongoose = require('mongoose');
+const uri = process.env.MONGODB_URI || 'mongodb+srv://admin:Admin123@enterpriseproject.qz3grsf.mongodb.net/test';
+
+mongoose.connect(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+.then(() => {
+  console.log('Connected to DB');
+  db = mongoose.connection;
+})
+.catch(err => console.log(err));
