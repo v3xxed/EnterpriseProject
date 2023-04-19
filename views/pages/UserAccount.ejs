@@ -5,14 +5,18 @@
 </head>
 
 <body>
-  <%- include('../partials/navigation.ejs') %>
+  <%- include('../partials/Navigation.ejs') %>
     <div class="Welcome">
       <p> Hello <%= userdata %></p>
     </div>
 
     <div class="Welcome">
       <p> This is your Account page </p>
+      <p> Here you can see your quotes </p>
     </div>
+    
+    <div class="AccountTitle">Quotes</div>
+    <%- include('../partials/OpenQuotes.ejs') %>
 
   </body>
 </html>
