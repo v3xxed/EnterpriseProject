@@ -208,7 +208,7 @@ app.post('/createauser', function(req, res){
       //if the username is not found in the collection create a new user and log them in
       if (!result) {
           //saves the new user into the database
-          db.collection('users').save(newuser, function (err, result){
+          db.collection('users').insertOne(newuser, function (err, result){
               if (err) throw err;
               console.log("user created! :)")
               req.session.loggedin = true;
@@ -247,7 +247,7 @@ app.post('/insertquote', function(req, res){
 
     //if no quote is found the quote is created and the user is redirected to the user account screen
     if (!result){
-      db.collection('quotes').save(newquote, function(err, result){
+      db.collection('quotes').insertOne(newquote, function(err, result){
         if (err) throw err;
         console.log('quote created!')
         res.redirect('/UserAccount')
