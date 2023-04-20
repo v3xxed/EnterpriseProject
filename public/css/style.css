@@ -126,8 +126,8 @@ h1 {
     font-weight: bold;
     font-variant: small-caps;
     font-family:Trebuchet MS;
-    right: 3%;
-    top: 20%;
+    left: 3%;
+    top: 50%;
     min-width: 53%;
     min-height: 75%;
     width: 13vw; 
@@ -143,7 +143,7 @@ h1 {
     font-variant: small-caps;
     font-family:Trebuchet MS;
     left: 3%;
-    top: 20%;
+    top: 30%;
     min-width: 53%;
     min-height: 75%;
     width: 13vw; 
@@ -158,8 +158,8 @@ h1 {
     font-weight: bold;
     font-variant: small-caps;
     font-family:Trebuchet MS;
-    right: 3%;
-    top: 50%;
+    left: 3%;
+    top: 70%;
     min-width: 53%;
     min-height: 75%;
     width: 13vw; 
