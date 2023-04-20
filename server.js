@@ -144,7 +144,7 @@ app.post('/dologin', function (req, res) {
 });
 
 //post request used to create a user, is called when a user creates an account
-app.post('/CreateaUser', function(req, res){
+app.post('/createauser', function(req, res){
   console.log(JSON.stringify(req.body))
   var uname = req.body.username;
   var pword = req.body.password;
@@ -178,4 +178,41 @@ app.post('/CreateaUser', function(req, res){
         }
       }
   )
+});
+
+//function called when the user creates a quote
+app.post('/insertquote', function(req, res){
+
+  //creates a variable to pass all the contract information to the database
+  var newquote = {
+  "ContractName" : req.body.name,
+  "Person" : req.body.job,
+  "Weeks" : req.body.weeks,
+  "FinalPrice" : req.body.price,
+  "Author" : req.session.currentuser
+  }
+
+  //reads the contracts name from the body parser
+  var quotename = req.body.name
+
+  //checks if the quote with the same name exists
+  db.collection('quotes').findOne({"ContractName" : quotename, "Author": req.session.currentuser}, function (err, result){
+    if (err) throw err;
+
+    //if no quote is found the quote is created and the user is redirected to the user account screen
+    if (!result){
+      db.collection('quotes').save(newquote, function(err, result){
+        if (err) throw err;
+        console.log('quote created!')
+        res.redirect('/UserAccount')
+    
+      })
+    }
+    //if the contracts name is already in the database redirect to the event builder
+    else{
+      console.log("contract name already taken")
+      res.redirect('/QuoteBuilder')
+
+    }
+  })
 });
