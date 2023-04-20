@@ -98,6 +98,33 @@ app.get('/SignUp', function(req,res){
       }
   })
 
+//when the app calls UserAccount this function is run
+app.get('/UserAccount', function(req, res){
+
+  //if the user isnt logged in redirect them to the sign screen
+    if (!req.session.loggedin) {
+        res.render('pages/SignIn');
+        return;
+      }
+
+      //if the user is logged in 
+      else{
+        
+        //finds quotes where the author is the logged in user and returns them to an array called owned
+        db.collection('quotes').find({"Author": req.session.currentuser}).toArray(function (err, owned) {
+          if (err) throw err;
+
+          //finds a single quote where the logged in user is the author and stores it in an array called quotefound
+          db.collection('quotes').findOne({"Author": req.session.currentuser}, function (err, quotefound) {
+            if (err) throw err;
+
+            //renders the user account and passes in the quotes and username
+            res.render('pages/UserAccount', {Quotes: owned, Contract: quotefound, User: req.session.currentuser})
+
+          })
+        });
+      }
+     })
 ////Post Requests/////-------------------------------------------------------------------------------------------------------------
 
 //when the login form is submitted this function is called 
