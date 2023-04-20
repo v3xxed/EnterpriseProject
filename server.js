@@ -216,3 +216,19 @@ app.post('/insertquote', function(req, res){
     }
   })
 });
+
+//function called when the user deletes a contract
+app.post('/deleteContract', function(req, res){
+
+  //gets the contracts name
+  var contractnm = req.body.name
+  //gets the contracts author
+  var auth = req.session.currentuser
+
+  //deletes the contract
+  db.collection('quotes').deleteOne( { "ContractName": contractnm, "Author": auth} )
+
+  //reloads the users account
+  res.redirect("/UserAccount")
+
+});
