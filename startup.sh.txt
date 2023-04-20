@@ -1,0 +1,13 @@
+#! /bin/bash
+
+#Clone repo
+git clone https://github.com/v3xxed/EnterpriseProject.git
+
+#navigate to repo
+cd EnterpriseProject
+
+#install dependecies 
+npm intsall 
+
+#run server
+npm start
