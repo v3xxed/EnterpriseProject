@@ -40,6 +40,7 @@ app.use(function(req, res, next){
 
 //Setup MongoDB--------------------------------------------------------------------------------
 const mongoose = require('mongoose');
+mongoose.set('strictQuery', false);
 const uri = process.env.MONGODB_URI || 'mongodb+srv://admin:Admin123@enterpriseproject.qz3grsf.mongodb.net/test';
 
 mongoose.connect(uri, {
@@ -54,7 +55,7 @@ mongoose.connect(uri, {
 .catch(err => console.log(err));
 
 //Start Server--------------------------------------------------------------------------------
-const serverPort = 8080;
+const serverPort = process.env.PORT || 3000;
 
 //tells the application to listen on port 8080 and logs it
 app.listen(serverPort, () => console.log(`Using port ${serverPort}`));
