@@ -130,7 +130,7 @@ h1 {
     top: 50%;
     min-width: 53%;
     min-height: 75%;
-    width: 13vw; 
+    width: 14vw; 
     height: 13%;
     white-space: pre-wrap;
     overflow: hidden;
@@ -167,3 +167,23 @@ h1 {
     white-space: pre-wrap;
     overflow: hidden;
 }
+.Contract button.editbutton{
+    position: absolute;
+    background-color: rgb(0, 255, 213);
+    border-radius:20px;
+    border: 3px solid rgb(0, 255, 213);
+    width: 12%;
+    min-width: 12%;
+    max-width: 13%;
+    right: 1%;
+    bottom: 1%;
+    font-weight: bold;
+    margin-top: 280px;
+    font-size: max(0.5vw, 50%);
+    text-align: center;
+    z-index: 1;
+  }
+  .Contract button.editbutton:hover{
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 255, 213);
+  }
