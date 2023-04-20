@@ -41,7 +41,7 @@ app.use(function(req, res, next){
 //Setup MongoDB--------------------------------------------------------------------------------
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
-const uri = process.env.MONGODB_URI || 'mongodb+srv://admin:Admin123@enterpriseproject.qz3grsf.mongodb.net/test';
+const uri = 'mongodb+srv://admin:Admin123@enterpriseproject.qz3grsf.mongodb.net/EnterpriseProject';
 
 mongoose.connect(uri, {
     useNewUrlParser: true,
