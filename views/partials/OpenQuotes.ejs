@@ -6,9 +6,9 @@
           <div class="Contract" id="Contract1">
             <input type ="hidden" name = "name" value="<%= Contract.ContractName %>">
             <div class="ContractTitle"><%= Contract.ContractName %></div>
-            <div class="ContractText"> Contract Length: <%= Contract.Weeks %> weeks</div>
-            <div class="ContractText"> Job: <%= Contract.Person %></div>
-            <div class="ContractText"> Price: £<%= Contract.FinalPrice %></div>
+            <div class="ContractWeeks"> Contract Length: <%= Contract.Weeks %> weeks</div>
+            <div class="ContractPerson"> Job: <%= Contract.Person %></div>
+            <div class="ContractPrice"> Price: £<%= Contract.FinalPrice %></div>
             <button class="editbutton" type="submit">Delete</button> 
           </div>
         </div>
