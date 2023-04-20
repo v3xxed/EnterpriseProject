@@ -142,7 +142,7 @@ h1 {
     font-variant: small-caps;
     font-family:Trebuchet MS;
     right: 3%;
-    top: 5%;
+    bottom: 5%;
     white-space: nowrap; 
     min-width: 53%;
     width: 13vw; 
@@ -159,7 +159,7 @@ h1 {
     font-variant: small-caps;
     font-family:Trebuchet MS;
     right: 3%;
-    top: 28%;
+    bottom: 28%;
     min-width: 53%;
     min-height: 75%;
     width: 13vw; 
