@@ -6,7 +6,7 @@
       <input class="nameBox" type="text" placeholder="Contract Name" title="Contract Name" id="ContractName" name="name" required><br><br>
   
       <label class="formLabel" for="person">Choose a Person</label><br>
-      <select id="person" name="job" required>
+      <select class="nameBox" id="person" name="job" required>
         <option value="junior">junior</option>
         <option value="standard">standard</option>
         <option value="senior">senior</option>
@@ -15,13 +15,13 @@
       <label class="formLabel" for="contractWeeks">Contract Duration in Weeks</label><br>
       <input class="nameBox" type="number" placeholder="0" title="contract weeks" id="contractWeeks" name="weeks" required><br><br>
   
-      <button type="button" onclick="FudgePrice()">Calculate Contract</button><br><br>
+      <button class="nameBox" type="button" onclick="FudgePrice()">Calculate Contract</button><br><br>
   
       <div id="getFudged" style="display: none;">
         <label class="formLabel" for="contractPrice">Price of Contract</label><br>
         <input class="nameBox" type="number" title="contract price" id="contractPrice" name="price" readonly><br><br>
   
-        <button type="submit">Save Contract</button>
+        <button class="nameBox" type="submit">Save Contract</button>
       </div>
     </div>
   </form>
