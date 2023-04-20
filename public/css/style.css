@@ -112,7 +112,7 @@ h1 {
     left: 3%;
     top: 5%;
     white-space: nowrap; 
-    min-width: 53%;
+    min-width: 63%;
     width: 13vw; 
     height: 25%;
     overflow: hidden;
@@ -128,9 +128,9 @@ h1 {
     font-family:Trebuchet MS;
     left: 3%;
     top: 50%;
-    min-width: 53%;
+    min-width: 63%;
     min-height: 75%;
-    width: 14vw; 
+    width: 13vw; 
     height: 13%;
     white-space: pre-wrap;
     overflow: hidden;
@@ -144,7 +144,7 @@ h1 {
     font-family:Trebuchet MS;
     left: 3%;
     top: 30%;
-    min-width: 53%;
+    min-width: 63%;
     min-height: 75%;
     width: 13vw; 
     height: 13%;
@@ -160,7 +160,7 @@ h1 {
     font-family:Trebuchet MS;
     left: 3%;
     top: 70%;
-    min-width: 53%;
+    min-width: 63%;
     min-height: 75%;
     width: 13vw; 
     height: 13%;
@@ -264,4 +264,44 @@ h1 {
     font-variant: small-caps;
     margin-top: 45px;
     margin-bottom: -30px;
+  }
+
+/*universal button for multiple pages*/
+.formButton{
+    background-color: rgb(0, 255, 213);
+    border-radius:20px;
+    border: 3px solid rgb(0, 255, 213);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    left: 20%;
+    float: top;
+    margin-top: 50px;
+    font-size: 17px;
+  }
+  .formButton:hover{
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 255, 213);
+  }
+  .formLabel{
+    color: rgb(0, 255, 213);
+    font-size: 20px;
+    font-family:Trebuchet MS;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-decoration:underline overline;
+    border: none;
+    position: relative;
+    margin-top: 50px;
+    left: 35%;  
+  }
+  .nameBox{
+    width: 30%; 
+    left: 35%;
+    right: 35%;
+    position: relative;
+    padding: 6px;
+    border: none;
+    margin-top: 10px;
+    font-size: 17px;
   }
