@@ -17,7 +17,7 @@
   
       <button type="button" onclick="FudgePrice()">Calculate Contract</button><br><br>
   
-      <div id="contractResult" style="display: none;">
+      <div id="getFudged" style="display: none;">
         <label class="formLabel" for="contractPrice">Price of Contract</label><br>
         <input class="nameBox" type="number" title="contract price" id="contractPrice" name="price" readonly><br><br>
   
@@ -27,9 +27,37 @@
   </form>
   
   <!-- calculate the price with the fudge factor included and return to show price -->
+  <!-- sets a fudge value, selects the value of either weeklyPrice or weeks, adds the Fudge Factor to the selected value, -->
+  <!-- multiplies the fudged value by the opposite of the selected value to get the final price of the contract-->
+
   <script>
   function FudgePrice() {
+    const employee = document.getElementById('person').value;
+    const weeks = document.getElementById('contractWeeks').value;
+    let weeklyPrice;
+  
+    switch (employee) {
+      case 'junior':
+      weeklyPrice = 450;
+        break;
+      case 'standard':
+      weeklyPrice = 900;
+        break;
+      case 'senior':
+      weeklyPrice = 1350;
+        break;
+      default:
+      weeklyPrice = 900;
+    }
+    
+    const fudge = Math.random() * (0.5 - 1.5);
+    const randomValue = Math.random() < 0.5 ? weeklyPrice : weeks;
+    const fudgedValue = randomValue * fudge;
+    const finalPrice = fudgedValue * -1 * (randomValue === weeklyPrice ? weeks : weeklyPrice);
+  
 
+    document.getElementById('contractPrice').value = finalPrice.toFixed(2);
+    document.getElementById('getFudged').style.display = 'block';
   }
   </script>
   
