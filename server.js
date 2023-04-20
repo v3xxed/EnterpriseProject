@@ -125,6 +125,24 @@ app.get('/UserAccount', function(req, res){
         });
       }
      })
+
+//function gets called when quote is requested
+app.get('/Quote', function(req, res){
+
+  //checks if the user is logged in
+  if (!req.session.loggedin) {
+
+      //renders the sign in page
+      res.render('pages/SignIn');
+      return;
+    }
+
+    //if the user is logged in then quote is loaded
+    else{
+      res.render('pages/Quote');
+    }
+})
+
 ////Post Requests/////-------------------------------------------------------------------------------------------------------------
 
 //when the login form is submitted this function is called 
