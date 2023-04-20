@@ -55,7 +55,7 @@ mongoose.connect(uri, {
 .catch(err => console.log(err));
 
 //Start Server--------------------------------------------------------------------------------
-const serverPort = process.env.PORT || 3000;
+const serverPort = process.env.PORT || 8000;
 
 //tells the application to listen on port 8080 and logs it
 app.listen(serverPort, () => console.log(`Using port ${serverPort}`));
