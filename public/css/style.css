@@ -126,8 +126,8 @@ h1 {
     font-weight: bold;
     font-variant: small-caps;
     font-family:Trebuchet MS;
-    left: 3%;
-    top: 28%;
+    right: 3%;
+    top: 20%;
     min-width: 53%;
     min-height: 75%;
     width: 13vw; 
@@ -136,20 +136,20 @@ h1 {
     overflow: hidden;
   }
   .Contract div.ContractPerson {
+    word-break: break-word;
     position: absolute;
-    font-size: 150%;
+    font-size: 12px;
     font-weight: bold;
     font-variant: small-caps;
     font-family:Trebuchet MS;
-    right: 3%;
-    bottom: 5%;
-    white-space: nowrap; 
+    left: 3%;
+    top: 20%;
     min-width: 53%;
+    min-height: 75%;
     width: 13vw; 
-    height: 25%;
+    height: 13%;
+    white-space: pre-wrap;
     overflow: hidden;
-    text-overflow: ellipsis; 
-    color:rgb(0, 255, 213);
   }
   .Contract div.ContractPrice{
     word-break: break-word;
@@ -159,7 +159,7 @@ h1 {
     font-variant: small-caps;
     font-family:Trebuchet MS;
     right: 3%;
-    bottom: 28%;
+    top: 50%;
     min-width: 53%;
     min-height: 75%;
     width: 13vw; 
