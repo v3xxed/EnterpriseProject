@@ -183,7 +183,85 @@ h1 {
     text-align: center;
     z-index: 1;
   }
-  .Contract button.editbutton:hover{
+.Contract button.editbutton:hover{
     background-color: rgb(255, 255, 255);
     color:rgb(0, 255, 213);
+  }
+
+/* settings for SignIn page */
+.LogInButton{
+    position: absolute;
+    background-color: rgb(0, 255, 213);
+    border-radius:20px;
+    border: 3px solid rgb(0, 255, 213);
+    width: 10%;
+    top: 20%;
+    left: 40%;
+    -ms-transform: translate(-50%, -20%);
+    transform: translate(-50%, -20%);
+    float: top;
+    margin-top: 200px;
+    font-size: 17px;
+  }
+  .LogInButton:hover{
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 255, 213);
+  }
+  .SignUpButton{
+    position: absolute;
+    background-color: rgb(0, 255, 213);
+    border-radius:20px;
+    border: 3px solid rgb(0, 255, 213);
+    width: 10%;
+    top: 20%;
+    left: 60%;
+    -ms-transform: translate(-50%, -20%);
+    transform: translate(-50%, -20%);
+    float: top;
+    margin-top: 200px;
+    font-size: 17px;
+  }
+  .SignUpButton:hover{
+    background-color: rgb(255, 255, 255);
+    color:rgb(0, 255, 213);
+  }
+  .UsernameBox{
+    width: 35%;
+    position: absolute;
+    left: 32.5%;
+    right: 32.5%;
+    padding: 6px;
+    border: none;
+    margin-top: 50px;
+    font-size: 17px;
+  }
+  .PasswordBox{
+    width: 35%;
+    position: absolute;
+    left: 32.5%;
+    right: 32.5%;
+    padding: 6px;
+    border: none;
+    margin-top: 125px;
+    font-size: 17px;
+  }
+  
+  
+  /* settings for Account page */
+  .AccountTitle{
+    text-align:center;
+    color: rgb(0, 255, 213);
+    font-size: 25px;
+    font-weight: bold;
+    font-variant: small-caps;
+    text-decoration:underline overline;
+  }
+  .Welcome{
+    text-align:center;
+    color: rgb(0, 255, 213);
+    font-size: 45px;
+    font-weight: bold;
+    font-variant: small-caps;
+    margin-top: 45px;
+    margin-bottom: -30px;
   }
