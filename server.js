@@ -143,4 +143,39 @@ app.post('/dologin', function (req, res) {
     });
 });
 
-  
+//post request used to create a user, is called when a user creates an account
+app.post('/CreateaUser', function(req, res){
+  console.log(JSON.stringify(req.body))
+  var uname = req.body.username;
+  var pword = req.body.password;
+
+  //creates a variable holding the new users login details
+  var newuser = {
+      "username" : uname,
+      "password" : pword
+  }
+
+  //checks if the username is already in the database
+  db.collection('users').findOne({"username": uname}, function (err, result) {
+      if (err) throw err;
+
+      //if the username is not found in the collection create a new user and log them in
+      if (!result) {
+          //saves the new user into the database
+          db.collection('users').save(newuser, function (err, result){
+              if (err) throw err;
+              console.log("user created! :)")
+              req.session.loggedin = true;
+              req.session.currentuser = uname;
+              res.redirect('/UserAccount');
+          })
+          return;
+        }
+        // if the user is found then they will be brought back to the signup screen
+        else{
+          console.log("user already exists!")
+          res.render('pages/SignUp')
+        }
+      }
+  )
+});
